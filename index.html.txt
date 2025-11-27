@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FAKH-ART - أواني فخارية تقليدية للطبخ الأصيل">
+    <meta property="og:title" content="FAKH-ART - أواني فخارية فاخرة">
+    <meta property="og:description" content="تشكيلة واسعة من الأواني الفخارية التقليدية">
+    <title>FAKH-ART - أواني فخارية تقليدية للطبخ الأصيل</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">FAKH-ART</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                <li><a href="#catalog" class="nav-link">المتجر</a></li>
+                <li><a href="#testimonials" class="nav-link">التقييمات</a></li>
+                <li><a href="#recipes" class="nav-link">الوصفات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/213541420166?text=مرحباً، أريد الاستفسار عن الأواني الفخارية" 
+       class="whatsapp-btn" title="تواصل معنا عبر واتساب">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.148.514 4.184 1.433 5.97L0 24l6.308-2.051C9.504 23.219 10.707 23.5 12 23.5c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.5c-1.111 0-2.188-.236-3.194-.651l-.229-.11-2.37.773.788-2.357-.142-.227C1.977 16.645 1.5 14.403 1.5 12c0-5.799 4.701-10.5 10.5-10.5s10.5 4.701 10.5 10.5-4.701 10.5-10.5 10.5zm5.738-7.771c-.314-.158-1.861-.92-2.15-1.024-.289-.104-.5-.158-.711.158-.211.316-.819 1.024-1.003 1.236-.184.211-.368.237-.682.079-.314-.158-1.327-.488-2.528-1.558-.935-.834-1.567-1.864-1.751-2.18-.184-.316-.02-.487.138-.644.142-.138.316-.368.474-.552.158-.184.211-.316.316-.526.105-.211.052-.395-.026-.553-.077-.158-.711-1.713-.975-2.343-.257-.603-.518-.521-.711-.531-.184-.009-.395-.009-.605-.009-.211 0-.553.079-.842.395-.289.316-.877 1.001-.877 2.439 0 1.438.897 2.828 1.022 3.021.126.193 1.789 2.734 4.335 3.834.605.264 1.078.422 1.446.54.607.193 1.16.166 1.596.1.486-.073 1.491-.609 1.702-1.198.211-.589.211-1.093.148-1.198-.063-.105-.263-.158-.552-.316z"/>
+        </svg>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">FAKH-ART</h1>
+            <p class="hero-subtitle">أواني فخارية تقليدية للطبخ الأصيل</p>
+            <p class="hero-description">
+                اكتشف نكهة الأطباق التقليدية الأصيلة مع أوانينا الفخارية الفاخرة
+                <br>
+                مثالية لرمضان والأعياد والمناسبات الخاصة
+            </p>
+            <button class="cta-btn" onclick="openWhatsApp()">تواصل معنا الآن</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="catalog" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>تشكيلتنا المميزة</h2>
+                <p>أواني فخارية مصنوعة بعناية فائقة لتمنحك أفضل تجربة طبخ تقليدية</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- يتم ملء المنتجات بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>لماذا الطبخ بالأواني الفخارية؟</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>طبخ صحي وتقليدي</h3>
+                    <p>الطبخ في الأواني الفخارية يحافظ على القيمة الغذائية للطعام ويطبخ بشكل طبيعي دون مواد كيميائية</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔥</div>
+                    <h3>نكهة أصيلة لا تُنسى</h3>
+                    <p>الفخار يعزز نكهة الطعام ويمنحه طعماً غنياً وأصيلاً لا يمكن الحصول عليه بأي طريقة أخرى</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>مثالية لرمضان والأعياد</h3>
+                    <p>أوانينا مثالية لطبخ الأطباق التقليدية في المناسبات الخاصة وتضيف لمسة أصيلة لمائدتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>آراء عملائنا</h2>
+                <p>اكتشف ما يقوله عملاؤنا عن أواني الفخار الفاخرة وتجاربهم في الطبخ</p>
+            </div>
+            <div class="testimonials-grid" id="testimonialsList">
+                <!-- يتم ملء التقييمات بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="recipes-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>وصفات طبخ تقليدية</h2>
+                <p>اكتشف أفضل الوصفات التقليدية التي تطهى بشكل مثالي في أواني الفخار الفاخرة</p>
+            </div>
+            <div class="recipes-grid" id="recipesList">
+                <!-- يتم ملء الوصفات بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>اتصل بنا</h2>
+                <p>نحن هنا للإجابة على استفساراتك ومساعدتك في اختيار الأواني المناسبة</p>
+            </div>
+            <div class="contact-grid">
+                <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <h3>أرسل لنا رسالة</h3>
+                    <input type="text" id="name" placeholder="اسمك الكامل" required>
+                    <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
+                    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+                    <textarea id="message" placeholder="رسالتك" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>واتساب</h3>
+                        <p>تواصل معنا مباشرة عبر واتساب للاستفسار أو الطلب</p>
+                        <button class="whatsapp-contact-btn" onclick="openWhatsApp()">فتح واتساب</button>
+                    </div>
+                    <div class="info-card">
+                        <h3>معلومات الاتصال</h3>
+                        <div class="contact-detail">
+                            <strong>الهاتف:</strong>
+                            <a href="tel:+213541420166">+213 541 420 166</a>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>البريد الإلكتروني:</strong>
+                            <a href="mailto:Lakhdarsamy8@gmail.com">Lakhdarsamy8@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>FAKH-ART</h3>
+            <p>أواني فخارية تقليدية للطبخ الأصيل - جودة عالية وأسعار منافسة</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
