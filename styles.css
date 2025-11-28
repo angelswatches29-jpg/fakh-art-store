@@ -7,12 +7,17 @@
 :root {
     --primary: #D4723B;
     --primary-dark: #B85E2C;
+    --primary-light: #E8A97A;
     --background: #F9F7F4;
+    --background-light: #FDFBF9;
     --text-dark: #2D1B0A;
     --text-light: #6B5A47;
+    --text-lighter: #9B8B7E;
     --border: #E8DDD2;
+    --border-light: #F0EAE5;
     --white: #FFFFFF;
     --whatsapp: #25D366;
+    --gold: #D4AF37;
 }
 
 html {
@@ -33,14 +38,14 @@ body {
     padding: 0 24px;
 }
 
-/* Navigation */
+/* ==================== Navigation ==================== */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
     background: var(--white);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .navbar .container {
@@ -51,99 +56,195 @@ body {
 }
 
 .nav-brand {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: var(--primary);
+    letter-spacing: 1px;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 8px;
+    gap: 4px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .nav-link {
     color: var(--text-dark);
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 10px 18px;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .nav-link:hover {
     background-color: var(--primary);
     color: var(--white);
+    transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* ==================== Hero Section ==================== */
 .hero {
-    min-height: 85vh;
-    background: linear-gradient(135deg, rgba(212, 114, 59, 0.8) 0%, rgba(184, 94, 44, 0.8) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23D4723B" width="1200" height="800"/></svg>');
-    background-size: cover;
-    background-position: center;
+    min-height: 90vh;
+    background: linear-gradient(135deg, #8B4513 0%, #D4723B 50%, #A0522D 100%);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
-    padding: 40px 20px;
+    max-width: 900px;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 8rem);
+    font-size: clamp(3.5rem, 10vw, 5rem);
     font-weight: 900;
-    margin-bottom: 24px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
+    letter-spacing: 2px;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
     margin-bottom: 16px;
     font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 32px;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
     line-height: 1.8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cta-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    color: var(--white);
-    padding: 16px 40px;
-    font-size: 1.1rem;
+    padding: 16px 32px;
+    font-size: 1.05rem;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-primary {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background: var(--background-light);
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
 }
 
-.cta-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-4px);
 }
 
-/* Section Headers */
+/* ==================== Section Headers ==================== */
 .section-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: bold;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 900;
     margin-bottom: 16px;
     color: var(--text-dark);
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    border-radius: 2px;
 }
 
 .section-header p {
@@ -153,51 +254,66 @@ body {
     margin: 0 auto;
 }
 
-/* Products Section */
+/* ==================== Products Section ==================== */
 .products-section {
-    padding: 80px 0;
+    padding: 100px 0;
+    background: var(--background-light);
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 36px;
 }
 
 .product-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
     cursor: pointer;
+    border: 1px solid var(--border-light);
 }
 
 .product-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(212, 114, 59, 0.15);
+    transform: translateY(-12px);
+    border-color: var(--primary);
 }
 
 .product-image {
     width: 100%;
     height: 280px;
-    background: linear-gradient(135deg, #D4723B, #B85E2C);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 3rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
 }
 
 .product-content {
-    padding: 24px;
+    padding: 28px;
 }
 
 .product-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 12px;
     text-align: right;
+    color: var(--text-dark);
 }
 
 .product-description {
@@ -205,13 +321,17 @@ body {
     font-size: 0.95rem;
     line-height: 1.6;
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
-/* Benefits Section */
+.product-card .submit-btn {
+    width: 100%;
+}
+
+/* ==================== Benefits Section ==================== */
 .benefits-section {
-    padding: 80px 0;
-    background: rgba(212, 114, 59, 0.05);
+    padding: 100px 0;
+    background: var(--background);
 }
 
 .benefits-grid {
@@ -222,167 +342,187 @@ body {
 
 .benefit-card {
     background: var(--white);
-    padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 36px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     text-align: center;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .benefit-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-8px);
 }
 
 .benefit-icon {
-    font-size: 3rem;
-    margin-bottom: 16px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .benefit-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
     color: var(--text-dark);
+    font-weight: 700;
 }
 
 .benefit-card p {
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
-/* Testimonials Section */
+/* ==================== Testimonials Section ==================== */
 .testimonials-section {
-    padding: 80px 0;
+    padding: 100px 0;
+    background: var(--background-light);
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 32px;
 }
 
 .testimonial-card {
     background: var(--white);
     padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
 }
 
 .testimonial-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
 .testimonial-header {
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 16px;
 }
 
 .testimonial-name {
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
     margin-bottom: 8px;
+    color: var(--text-dark);
 }
 
 .stars {
     display: flex;
     justify-content: flex-end;
     gap: 4px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .testimonial-text {
     color: var(--text-light);
     font-style: italic;
-    line-height: 1.7;
+    line-height: 1.8;
     text-align: right;
+    font-size: 0.95rem;
 }
 
-/* Recipes Section */
+/* ==================== Recipes Section ==================== */
 .recipes-section {
-    padding: 80px 0;
-    background: rgba(212, 114, 59, 0.02);
+    padding: 100px 0;
+    background: var(--background);
 }
 
 .recipes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 36px;
 }
 
 .recipe-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
 }
 
 .recipe-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
 }
 
 .recipe-header {
-    background: rgba(212, 114, 59, 0.1);
-    padding: 24px;
+    background: linear-gradient(135deg, rgba(212, 114, 59, 0.1), rgba(212, 114, 59, 0.05));
+    padding: 28px;
     border-bottom: 1px solid var(--border);
 }
 
 .recipe-category {
     display: inline-block;
-    background: rgba(212, 114, 59, 0.2);
-    color: var(--primary);
-    padding: 4px 12px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: var(--white);
+    padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: bold;
-    margin-bottom: 12px;
+    font-weight: 700;
+    margin-bottom: 14px;
 }
 
 .recipe-title {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.35rem;
+    font-weight: 700;
     text-align: right;
+    color: var(--text-dark);
 }
 
 .recipe-meta {
     display: flex;
     justify-content: flex-end;
-    gap: 24px;
+    gap: 28px;
     font-size: 0.9rem;
     color: var(--text-light);
     margin: 16px 0;
 }
 
 .recipe-content {
-    padding: 24px;
+    padding: 28px;
 }
 
 .recipe-description {
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
 }
 
 .recipe-list {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .recipe-list h4 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-size: 1.15rem;
+    margin-bottom: 14px;
     text-align: right;
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
-.recipe-list ul {
-    list-style: none;
+.recipe-list ul,
+.recipe-list ol {
     text-align: right;
 }
 
 .recipe-list li {
-    padding: 6px 0;
+    padding: 8px 0;
     color: var(--text-light);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
 }
 
 .recipe-list li:before {
@@ -390,209 +530,270 @@ body {
     color: var(--primary);
     font-weight: bold;
     margin-left: 12px;
+    font-size: 1.2rem;
 }
 
-/* Contact Section */
+/* ==================== Contact Section ==================== */
 .contact-section {
-    padding: 80px 0;
-    background: rgba(212, 114, 59, 0.05);
+    padding: 100px 0;
+    background: var(--background-light);
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 56px;
 }
 
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 40px;
     }
 }
 
 .contact-form {
     background: var(--white);
-    padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border-light);
 }
 
 .contact-form h3 {
-    font-size: 1.3rem;
-    margin-bottom: 24px;
+    font-size: 1.4rem;
+    margin-bottom: 28px;
     text-align: right;
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
     font-family: inherit;
     font-size: 1rem;
     text-align: right;
+    background: var(--background-light);
+    transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(212, 114, 59, 0.1);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(212, 114, 59, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
 }
 
 .submit-btn {
     width: 100%;
-    padding: 12px 24px;
-    background: var(--primary);
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: var(--white);
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 114, 59, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 114, 59, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
 }
 
 .info-card {
     background: var(--white);
-    padding: 32px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 36px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.info-whatsapp {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.05), rgba(37, 211, 102, 0.02));
+    border-color: var(--whatsapp);
 }
 
 .info-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 16px;
     text-align: right;
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
 .info-card p {
     color: var(--text-light);
     text-align: right;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .whatsapp-contact-btn {
     width: 100%;
-    padding: 12px 24px;
-    background: var(--whatsapp);
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--whatsapp), #20BA5A);
     color: var(--white);
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .whatsapp-contact-btn:hover {
-    background: #20BA5A;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
 .contact-detail {
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     text-align: right;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.contact-detail:last-child {
+    border-bottom: none;
 }
 
 .contact-detail strong {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: var(--text-dark);
+    font-weight: 700;
 }
 
 .contact-detail a {
     color: var(--primary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .contact-detail a:hover {
     color: var(--primary-dark);
+    text-decoration: underline;
 }
 
-/* WhatsApp Button */
+.contact-detail p {
+    color: var(--text-light);
+    margin: 4px 0;
+}
+
+/* ==================== WhatsApp Button ==================== */
 .whatsapp-btn {
     position: fixed;
     bottom: 24px;
     left: 24px;
-    width: 64px;
-    height: 64px;
-    background: var(--whatsapp);
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--whatsapp), #20BA5A);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     z-index: 50;
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
+    animation: pulse 2.5s infinite;
+    border: none;
 }
 
 .whatsapp-btn:hover {
-    background: #20BA5A;
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:active {
+    transform: scale(0.95);
 }
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     }
     50% {
-        box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 40px rgba(37, 211, 102, 0.6);
     }
 }
 
-/* Footer */
+/* ==================== Footer ==================== */
 .footer {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    padding: 32px 0;
+    background: linear-gradient(135deg, var(--text-dark), var(--text-dark) 50%, var(--primary) 100%);
+    color: var(--white);
+    padding: 48px 0 24px;
     text-align: center;
+    border-top: 3px solid var(--primary);
 }
 
 .footer h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 8px;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .footer p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-size: 1rem;
 }
 
-/* Responsive */
+.footer-copyright {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* ==================== Responsive ==================== */
 @media (max-width: 768px) {
     .nav-menu {
-        gap: 4px;
+        gap: 2px;
     }
 
     .nav-link {
-        font-size: 12px;
-        padding: 6px 12px;
+        font-size: 13px;
+        padding: 8px 12px;
     }
 
     .products-grid,
     .testimonials-grid,
-    .recipes-grid {
+    .recipes-grid,
+    .benefits-grid {
         grid-template-columns: 1fr;
     }
 
@@ -600,28 +801,31 @@ body {
         font-size: 1.8rem;
     }
 
-    .recipe-meta {
-        font-size: 0.8rem;
-        gap: 12px;
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
-    .cta-btn {
-        padding: 12px 32px;
-        font-size: 1rem;
+    .hero-content {
+        padding: 40px 16px;
     }
 
     .navbar .container {
@@ -632,12 +836,29 @@ body {
     .nav-menu {
         width: 100%;
         justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 10px 16px;
     }
 
     .whatsapp-btn {
-        width: 56px;
-        height: 56px;
+        width: 60px;
+        height: 60px;
         bottom: 16px;
         left: 16px;
+    }
+
+    .contact-form,
+    .info-card {
+        padding: 24px;
+    }
+
+    .recipe-meta {
+        gap: 16px;
+        font-size: 0.8rem;
     }
 }
