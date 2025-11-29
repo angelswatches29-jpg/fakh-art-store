@@ -152,23 +152,32 @@ body {
 /* ==================== Hero Section ==================== */
 .hero {
     min-height: 90vh;
-    /* دمج التعتيم (Overlay) الأسود الشفاف مع صورة الفخار */
+
+    /* 🎨 الخلفية: دمج التعتيم الداكن مع صورة الفخار */
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        image:"fakh-art-bg.jpg.PNG"
+        url('images/fakh-art-bg.jpg.PNG'); /* <--- هذا هو المسار الصحيح */
         
-    /* خصائص الصورة لضمان التغطية والتمركز */
+    /* ضمان أن الصورة تغطي المساحة بالكامل */
     background-size: cover; 
+    
+    /* ضمان عدم التكرار */
+    background-repeat: no-repeat; 
+
+    /* تثبيت الصورة وتوسيطها */
     background-position: center;
     background-attachment: fixed;
     
+    /* تنسيق المحتوى الداخلي */
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
+    align-items: center; 
+    justify-content: center; 
+    color: var(--white); 
     text-align: center;
     overflow: hidden;
+}
+
     
 }
 /* ======================== Buttons Styles ======================== */
