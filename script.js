@@ -1,601 +1,230 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+// ==================== Products Data ====================
+const products = [
+    {
+        id: 1,
+        name: "طقم الطاجن التقليدي الفيروزي",
+        description: "طقم متكامل بتصميم فيروزي تقليدي أصيل، يشمل طاجن بغطاء وصحون تقديم وأكواس شاي. مصنوع من خامات فخارية طبيعية عالية الجودة، يحتفظ بالحرارة بشكل ممتاز ويضيف لمسة راقية لمائدتك.",
+        image: "./images/set1.jpg"
+    },
+    {
+        id: 2,
+        name: "طقم الطبخ الكلاسيكي الفاخر",
+        description: "طقم فخاري فاخر بلون بني عميق مع نقوش ذهبية براقة. يتضمن قدور الطبخ بأحجام مختلفة وصحون تقديم متنوعة. مثالي للطهي البطيء والحفاظ على نكهة الطعام الأصيلة.",
+        image: "./images/set2.jpg"
+    },
+    {
+        id: 3,
+        name: "طقم التراث العربي الأصيل",
+        description: "طقم جميل يجمع بين الأحمر والأزرق الكلاسيكي، يعكس التراث العربي الأصيل. يشمل أطباق كبيرة للتقديم وأكواس وأطباق صغيرة. مناسب للعائلات الكبيرة والمناسبات الخاصة.",
+        image: "./images/set3.jpg"
+    },
+    {
+        id: 4,
+        name: "طقم الفخار الريفي الدافئ",
+        description: "طقم فخاري ريفي بألوان دافئة وذهبية، يوحي بالدفء والراحة. يتضمن قدور طبخ بأحجام مختلفة وصحون تقديم عملية وجميلة. يحافظ على درجة حرارة الطعام بشكل طبيعي.",
+        image: "./images/set4.jpg"
+    },
+    {
+        id: 5,
+        name: "طقم الأناقة الكلاسيكية",
+        description: "طقم أنيق بتصميم كلاسيكي بسيط مع نقوش رمادية دقيقة. يشمل طاجن بغطاء وصحون تقديم وأكواس شاي وأطباق. خيار مثالي للمنازل الأنيقة والذوق الرفيع.",
+        image: "./images/set5.jpg"
+    }
+];
+
+// ==================== Recipes Data ====================
+const recipes = [
+    {
+        id: 1,
+        title: "طاجن الكسكس بالدجاج الرمضاني",
+        category: "وصفات رمضان",
+        description: "وصفة تقليدية رمضانية شهيرة، يطهى الدجاج ببطء مع البصل والجزر والتوابل في طاجن فخاري مما يعطيه نكهة فريدة وعميقة.",
+        ingredients: [
+            "دجاج مقطع (1 كغ)",
+            "كسكس (500 غ)",
+            "بصل (3 حبات)",
+            "جزر (4 حبات)",
+            "حمص مسلوق (كوب)",
+            "زيت زيتون (ربع كوب)",
+            "توابل (كمون، قرفة، كركم)",
+            "ماء دافئ حسب الحاجة"
+        ],
+        instructions: [
+            "ضع زيت الزيتون في الطاجن الفخاري على نار متوسطة",
+            "أضف البصل والجزر وحمرها قليلاً",
+            "أضف الدجاج والتوابل واطهه لمدة 30 دقيقة على نار هادئة",
+            "أضف الحمص والماء",
+            "اترك الطاجن حتى ينضج اللحم تماماً",
+            "قدّم ساخناً مع الكسكس"
+        ]
+    },
+    {
+        id: 2,
+        title: "قدر الفاصوليا البيضاء التقليدي",
+        category: "أطباق العائلة",
+        description: "طبق دافئ وصحي يطهى في القدر الفخاري ببطء، يجمع بين نكهات اللحم والفاصوليا والتوابل لإعطاء طعم شهي لا يُنسى.",
+        ingredients: [
+            "فاصوليا بيضاء مسلوقة (كيلو)",
+            "لحم مقطع (500 غ)",
+            "بصل (2 حبة)",
+            "ثوم (4 فصوص)",
+            "طماطم (3 حبات)",
+            "زيت زيتون (ربع كوب)",
+            "مرق دجاج (2 كوب)",
+            "ملح وفلفل"
+        ],
+        instructions: [
+            "سخّن الزيت في القدر الفخاري",
+            "أضف اللحم والبصل والثوم",
+            "أضف الطماطم والمرق",
+            "أضف الفاصوليا البيضاء",
+            "اترك الطبق على نار هادئة لمدة 45 دقيقة",
+            "قدّم ساخناً مع الخبز"
+        ]
+    },
+    {
+        id: 3,
+        title: "طاجن السمك بالليمون والأعشاب",
+        category: "أطباق المناسبات",
+        description: "طبق فاخر وخفيف مثالي للمناسبات الخاصة، السمك الطازة يطهى بلطف في الطاجن مع عصير الليمون والأعشاب العطرية.",
+        ingredients: [
+            "سمك طازة (1 كغ)",
+            "ليمون (2 حبة)",
+            "بصل (1 حبة)",
+            "زيت زيتون (ربع كوب)",
+            "ثوم (3 فصوص)",
+            "أعشاب طازة (بقدونس، كزبرة، نعناع)",
+            "ملح وفلفل",
+            "ماء قليل"
+        ],
+        instructions: [
+            "نظّف السمك جيداً",
+            "ضع السمك في الطاجن الفخاري",
+            "أضف شرائح الليمون والبصل والثوم",
+            "انثر الأعشاب الطازة المفرومة",
+            "صب الزيت وعصير الليمون",
+            "غطّ الطاجن واطهه على نار هادئة لمدة 20 دقيقة فقط",
+            "قدّم مع الأرز أو الخضار"
+        ]
+    }
+];
+
+// ==================== Load Products ====================
+function loadProducts() {
+    const grid = document.getElementById('productsGrid');
+    grid.innerHTML = products.map(product => `
+        <div class="product-card">
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-description">${product.description}</p>
+                <button class="order-btn" onclick="orderProduct('${product.name}')">اطلب الآن</button>
+            </div>
+        </div>
+    `).join('');
 }
 
-:root {
-    --primary: #C17A4E;
-    --primary-dark: #9D6140;
-    --primary-light: #D4956A;
-    --background: #FEFAF3;
-    --text-dark: #2C1810;
-    --text-light: #6B5C4E;
-    --border: #E8DDD2;
-    --white: #FFFFFF;
-    --whatsapp: #25D366;
+// ==================== Load Recipes ====================
+function loadRecipes() {
+    const grid = document.getElementById('recipesGrid');
+    grid.innerHTML = recipes.map(recipe => `
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <span class="recipe-category">${recipe.category}</span>
+                <h3 class="recipe-title">${recipe.title}</h3>
+            </div>
+            <div class="recipe-content">
+                <p class="recipe-description">${recipe.description}</p>
+                
+                <div class="recipe-list">
+                    <h4>المكونات</h4>
+                    <ul>
+                        ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="recipe-list">
+                    <h4>طريقة التحضير</h4>
+                    <ul>
+                        ${recipe.instructions.map(inst => `<li>${inst}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `).join('');
 }
 
-html {
-    scroll-behavior: smooth;
+// ==================== Order Product ====================
+function orderProduct(productName) {
+    const message = encodeURIComponent(`مرحباً، أنا مهتم بطقم: ${productName}\nهل يمكنك إخبري بالسعر والمواصفات التفصيلية؟`);
+    window.open(`https://wa.me/213541420166?text=${message}`, '_blank');
 }
 
-body {
-    font-family: 'Tajawal', Arial, sans-serif;
-    background-color: var(--background);
-    color: var(--text-dark);
-    line-height: 1.7;
-    direction: rtl;
+// ==================== Open WhatsApp ====================
+function openWhatsApp() {
+    const message = encodeURIComponent("مرحباً، أريد الاستفسار عن أطقم الأواني الفخارية");
+    window.open(`https://wa.me/213541420166?text=${message}`, '_blank');
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* ==================== Navigation ==================== */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--white);
-    border-bottom: 2px solid var(--border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-}
-
-.nav-brand {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--primary);
-    letter-spacing: 2px;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.nav-link {
-    color: var(--text-dark);
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.nav-link:hover {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-/* ==================== Hero Section ==================== */
-.hero {
-    min-height: 90vh;
-    background: linear-gradient(135deg, #7D4E2C 0%, #C17A4E 50%, #9D6140 100%);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    text-align: center;
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 60px 40px;
-}
-
-.hero-title {
-    font-size: clamp(3.5rem, 10vw, 5rem);
-    font-weight: 900;
-    margin-bottom: 16px;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
-    letter-spacing: 3px;
-}
-
-.hero-subtitle {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    margin-bottom: 16px;
-    font-weight: 500;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    line-height: 1.8;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cta-btn {
-    padding: 16px 32px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.cta-primary {
-    background: var(--white);
-    color: var(--primary);
-}
-
-.cta-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-.cta-secondary {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-}
-
-.cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px);
-}
-
-/* ==================== Section Headers ==================== */
-.section-header {
-    text-align: center;
-    margin-bottom: 56px;
-}
-
-.section-header h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 900;
-    color: var(--text-dark);
-    margin-bottom: 16px;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.section-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-    border-radius: 2px;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ==================== Catalog Section ==================== */
-.catalog-section {
-    padding: 100px 0;
-    background: var(--background);
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 36px;
-}
-
-.product-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    border: 1px solid var(--border);
-}
-
-.product-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 16px 40px rgba(193, 122, 78, 0.15);
-    border-color: var(--primary);
-}
-
-.product-image {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.08);
-}
-
-.product-content {
-    padding: 28px;
-}
-
-.product-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 12px;
-    text-align: right;
-}
-
-.product-description {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.order-btn {
-    width: 100%;
-    padding: 14px 24px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    border: none;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.order-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(193, 122, 78, 0.3);
-}
-
-/* ==================== Recipes Section ==================== */
-.recipes-section {
-    padding: 100px 0;
-    background: #FBF8F5;
-}
-
-.recipes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 36px;
-}
-
-.recipe-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border);
-}
-
-.recipe-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-}
-
-.recipe-header {
-    background: linear-gradient(135deg, rgba(193, 122, 78, 0.1), rgba(193, 122, 78, 0.05));
-    padding: 28px;
-    border-bottom: 1px solid var(--border);
-}
-
-.recipe-title {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-align: right;
-    margin-bottom: 12px;
-}
-
-.recipe-category {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
-    color: var(--white);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.recipe-content {
-    padding: 28px;
-}
-
-.recipe-description {
-    color: var(--text-light);
-    text-align: right;
-    margin-bottom: 18px;
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-.recipe-list h4 {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    text-align: right;
-    margin-bottom: 12px;
-    font-weight: 700;
-    margin-top: 16px;
-}
-
-.recipe-list ul {
-    text-align: right;
-    list-style: none;
-}
-
-.recipe-list li {
-    padding: 8px 0;
-    color: var(--text-light);
-    border-bottom: 1px solid var(--border);
-    font-size: 0.95rem;
-}
-
-.recipe-list li:before {
-    content: "•";
-    color: var(--primary);
-    font-weight: bold;
-    margin-left: 12px;
-    font-size: 1.2rem;
-}
-
-/* ==================== Contact Section ==================== */
-.contact-section {
-    padding: 100px 0;
-    background: var(--background);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-}
-
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
+// ==================== Scroll To Section ====================
+function scrollTo(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
-.contact-form {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--border);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 18px;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1rem;
-    text-align: right;
-    background: #FBF8F5;
-    transition: all 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(193, 122, 78, 0.1);
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 14px 32px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    border: none;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(193, 122, 78, 0.3);
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-}
-
-.info-card {
-    background: var(--white);
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.info-card h3 {
-    font-size: 1.3rem;
-    color: var(--text-dark);
-    text-align: right;
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-
-.info-card p {
-    color: var(--text-light);
-    text-align: right;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-}
-
-.whatsapp-link,
-.email-link {
-    display: inline-block;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-link:hover,
-.email-link:hover {
-    color: var(--primary-dark);
-    text-decoration: underline;
-}
-
-/* ==================== WhatsApp Button ==================== */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--whatsapp), #20BA5A);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-    z-index: 50;
-    transition: all 0.3s ease;
-    animation: pulse 2.5s infinite;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.15);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+// ==================== Handle Contact Form ====================
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!name || !email || !phone || !message) {
+        alert('يرجى ملء جميع الحقول');
+        return;
     }
-    50% {
-        box-shadow: 0 4px 40px rgba(37, 211, 102, 0.6);
-    }
+    
+    const whatsappMessage = encodeURIComponent(
+        `📋 رسالة جديدة من موقع FAKH-ART\n\n` +
+        `👤 الاسم: ${name}\n` +
+        `📧 البريد: ${email}\n` +
+        `📱 الهاتف: ${phone}\n\n` +
+        `💬 الرسالة:\n${message}`
+    );
+    
+    window.open(`https://wa.me/213541420166?text=${whatsappMessage}`, '_blank');
+    
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+    
+    alert('✅ تم إرسال رسالتك بنجاح!\nسنتواصل معك قريباً');
 }
 
-/* ==================== Footer ==================== */
-.footer {
-    background: linear-gradient(135deg, var(--text-dark), var(--primary));
-    color: var(--white);
-    padding: 48px 0 24px;
-    text-align: center;
-    border-top: 3px solid var(--primary);
-}
+// ==================== Initialize ====================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🏺 تحميل FAKH-ART...');
+    loadProducts();
+    loadRecipes();
+    console.log('✅ تم تحميل جميع البيانات بنجاح!');
+});
 
-.footer p {
-    margin: 8px 0;
-    font-size: 0.95rem;
-}
-
-/* ==================== Responsive ==================== */
-@media (max-width: 768px) {
-    .nav-menu {
-        gap: 4px;
-    }
-
-    .nav-link {
-        font-size: 13px;
-        padding: 8px 12px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .cta-btn {
-        width: 100%;
-    }
-
-    .products-grid,
-    .recipes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form,
-    .info-card {
-        padding: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-brand {
-        font-size: 20px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-content {
-        padding: 40px 20px;
-    }
-
-    .whatsapp-btn {
-        width: 60px;
-        height: 60px;
-        bottom: 16px;
-        left: 16px;
-    }
-}
+// ==================== Smooth Scroll ====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
