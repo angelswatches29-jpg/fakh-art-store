@@ -85,15 +85,29 @@ body {
 
 /* ==================== Hero Section ==================== */
 .hero {
-    min-height: 90vh;
-    background: linear-gradient(135deg, rgba(125, 78, 44, 0.4) 0%, rgba(193, 122, 78, 0.4) 50%, rgba(157, 97, 64, 0.4) 100%), 
-                url('./hero-bg.jpg.jpg'); center/cover no-repeat;
+    min-height: 90vh; /* ارتفاع القسم */
+
+    /* 🎨 الخلفية: دمج التعتيم الداكن مع صورة الفخار */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('/hero-bg.jpg.jpg'); /* <--- المسار الأكثر أماناً يبدأ من الجذر */
+        
+    /* ضمان أن الصورة تغطي المساحة بالكامل */
+    background-size: cover; 
+    
+    /* ضمان عدم التكرار */
+    background-repeat: no-repeat; 
+
+    /* تثبيت الصورة وتوسيطها */
+    background-position: center;
     background-attachment: fixed;
+    
+    /* تنسيق المحتوى الداخلي */
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
+    align-items: center; /* توسيط عمودي */
+    justify-content: center; /* توسيط أفقي */
+    color: var(--white); /* لون النص أبيض */
     text-align: center;
     overflow: hidden;
 }
