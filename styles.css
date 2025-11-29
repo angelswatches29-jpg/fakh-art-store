@@ -50,6 +50,29 @@ body {
     align-items: center;
     padding: 16px 24px;
 }
+/* ======================== Logo Styling (FAKH-ART) ======================== */
+.navbar-brand {
+    /* استخدام اللون البني الداكن (--primary-dark) للشعار لجعله واضحاً وقوياً */
+    color: var(--primary-dark); 
+    
+    /* جعل الخط أكثر جرأة ووضوحاً */
+    font-weight: 900; /* قيمة عالية جداً لتمييزه */
+    
+    /* حجم خط بارز */
+    font-size: 26px; 
+    
+    /* إزالة أي تسطير إذا كان رابطاً */
+    text-decoration: none;
+    
+    /* انتقال بسيط لتأثير التمرير */
+    transition: color 0.3s ease;
+}
+
+/* تأثير بسيط عند تمرير الماوس عليه */
+.navbar-brand:hover {
+    /* يصبح أفتح قليلاً باستخدام اللون الأساسي */
+    color: var(--primary);
+}
 
 .nav-brand {
     font-size: 28px;
@@ -129,12 +152,12 @@ body {
 /* ==================== Hero Section ==================== */
 .hero {
     min-height: 90vh;
-    /* 🎨 الكود المعدل هنا: دمج التعتيم الداكن مع الصورة */
+    /* دمج التعتيم (Overlay) الأسود الشفاف مع صورة الفخار */
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* طبقة تعتيم */
-        url('images/fakh-art-bg.jpg'); /* الصورة التي اخترتها */
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('images/fakh-art-bg.jpg'); 
         
-    /* خصائص الصورة الإضافية */
+    /* خصائص الصورة لضمان التغطية والتمركز */
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
@@ -146,6 +169,53 @@ body {
     color: var(--white);
     text-align: center;
     overflow: hidden;
+    
+}
+/* ======================== Buttons Styles ======================== */
+
+/* تنسيق حاوية الأزرار (لترتيبها) */
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* مسافة بين الأزرار */
+    margin-top: 30px; /* مسافة من النص الذي فوقه */
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+/* التنسيق العام للأزرار */
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px; 
+    border-radius: 8px; /* حواف مستديرة */
+    text-decoration: none; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+/* 1. تنسيق الزر الأساسي: "استكشف الأطقم" */
+.cta-btn.cta-primary {
+    background-color: var(--primary); /* اللون الأساسي البني الدافئ */
+    color: var(--white); 
+    border: 2px solid var(--primary); 
+}
+
+.cta-btn.cta-primary:hover {
+    background-color: var(--primary-dark); 
+    border-color: var(--primary-dark);
+}
+
+/* 2. تنسيق الزر الثانوي: "تواصل معنا الآن" */
+.cta-btn.cta-secondary {
+    background-color: transparent; 
+    color: var(--white); 
+    border: 2px solid var(--white); 
+}
+
+.cta-btn.cta-secondary:hover {
+    background-color: var(--primary); 
+    color: var(--white);
+    border-color: var(--primary); 
 }
 
 
