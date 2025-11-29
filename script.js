@@ -27,8 +27,8 @@ const products = [
         { name: "الطاجن بالغطاء", image: "set1-item1.jpg.jpg" },
         { name: "الإبريق الكبير", image: "set1-item2.jpg.jpg" },
         { name: "الإبريق الصغير", image: "set1-item3. jpg.jpg" },
-        { name: "الأكواس المكدسة", image: "set1-item4. jpg.jpg" },
-        { name: "الأطباق المكدسة", image: "set1-item5.jpg.jpg" },
+        { name: "الأكواس المكدسة", image: "set1-item4.jpg.jpg" },
+        { name: "الأطباق المكدسة", image: "set1-item5. jpg.jpg" },
         { name: "الطبق البيضاوي الكبير", image: "set1-item6.jpg.jpg" }
     ]
 },
