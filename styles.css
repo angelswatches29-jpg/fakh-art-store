@@ -1,3 +1,6 @@
+/* ==================== FAKH-ART Complete CSS ==================== */
+/* Copy this entire file into your styles.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -50,29 +53,6 @@ body {
     align-items: center;
     padding: 16px 24px;
 }
-/* ======================== Logo Styling (FAKH-ART) ======================== */
-.navbar-brand {
-    /* استخدام اللون البني الداكن (--primary-dark) للشعار لجعله واضحاً وقوياً */
-    color: var(--primary-dark); 
-    
-    /* جعل الخط أكثر جرأة ووضوحاً */
-    font-weight: 900; /* قيمة عالية جداً لتمييزه */
-    
-    /* حجم خط بارز */
-    font-size: 26px; 
-    
-    /* إزالة أي تسطير إذا كان رابطاً */
-    text-decoration: none;
-    
-    /* انتقال بسيط لتأثير التمرير */
-    transition: color 0.3s ease;
-}
-
-/* تأثير بسيط عند تمرير الماوس عليه */
-.navbar-brand:hover {
-    /* يصبح أفتح قليلاً باستخدام اللون الأساسي */
-    color: var(--primary);
-}
 
 .nav-brand {
     font-size: 28px;
@@ -102,206 +82,161 @@ body {
     background-color: var(--primary);
     color: var(--white);
 }
-/* ======================== Buttons Styles ======================== */
-.btn-primary {
-    /* الخلفية: استخدام اللون الأساسي البني الدافئ */
-    background-color: var(--primary); 
-    /* النص: استخدام اللون الأبيض */
-    color: var(--white); 
-    
-    /* الخصائص الشكلية */
-    display: inline-block; 
-    padding: 15px 30px; 
-    border: 2px solid var(--primary); 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    transition: background-color 0.3s ease, border-color 0.3s ease; 
-}
-
-/* تأثير التمرير (Hover Effect) */
-.btn-primary:hover {
-    /* عند مرور الماوس: نستخدم اللون الأساسي الداكن */
-    background-color: var(--primary-dark); 
-    border-color: var(--primary-dark);
-}
-/* ======================== Buttons Styles ======================== */
-.btn-primary {
-    /* الخلفية: استخدام اللون الأساسي البني الدافئ */
-    background-color: var(--primary); 
-    /* النص: استخدام اللون الأبيض */
-    color: var(--white); 
-    
-    /* الخصائص الشكلية */
-    display: inline-block; 
-    padding: 15px 30px; 
-    border: 2px solid var(--primary); 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    transition: background-color 0.3s ease, border-color 0.3s ease; 
-}
-
-/* تأثير التمرير (Hover Effect) */
-.btn-primary:hover 
-    /* عند مرور الماوس: نستخدم اللون الأساسي الداكن */
-    background-color: var(--primary-dark); 
-    border-color: var(--primary-dark);
-}
 
 /* ==================== Hero Section ==================== */
 .hero {
     min-height: 90vh;
-
-    /* 🎨 الخلفية: دمج التعتيم الداكن مع صورة الفخار */
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url('images/fakh-art-bg.jpg. PNG'); /* <--- هذا هو المسار الصحيح */
-        
-    /* ضمان أن الصورة تغطي المساحة بالكامل */
-    background-size: cover; 
-    
-    /* ضمان عدم التكرار */
-    background-repeat: no-repeat; 
-
-    /* تثبيت الصورة وتوسيطها */
-    background-position: center;
+    background: linear-gradient(135deg, rgba(125, 78, 44, 0.4) 0%, rgba(193, 122, 78, 0.4) 50%, rgba(157, 97, 64, 0.4) 100%), 
+                url('./images/hero-bg.jpg') center/cover no-repeat;
     background-attachment: fixed;
-    
-    /* تنسيق المحتوى الداخلي */
     position: relative;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    color: var(--white); 
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
     text-align: center;
     overflow: hidden;
 }
 
-    
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.5) 50%, 
+        rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
 }
-/* ======================== Buttons Styles ======================== */
-
-/* تنسيق حاوية الأزرار (لترتيبها) */
-.hero-buttons {
-    display: flex;
-    gap: 20px; /* مسافة بين الأزرار */
-    margin-top: 30px; /* مسافة من النص الذي فوقه */
-    flex-wrap: wrap; 
-    justify-content: center;
-}
-
-/* التنسيق العام للأزرار */
-.cta-btn {
-    display: inline-block;
-    padding: 15px 30px; 
-    border-radius: 8px; /* حواف مستديرة */
-    text-decoration: none; 
-    font-weight: 600; 
-    cursor: pointer; 
-    transition: all 0.3s ease; 
-}
-
-/* 1. تنسيق الزر الأساسي: "استكشف الأطقم" */
-.cta-btn.cta-primary {
-    background-color: var(--primary); /* اللون الأساسي البني الدافئ */
-    color: var(--white); 
-    border: 2px solid var(--primary); 
-}
-
-.cta-btn.cta-primary:hover {
-    background-color: var(--primary-dark); 
-    border-color: var(--primary-dark);
-}
-
-/* 2. تنسيق الزر الثانوي: "تواصل معنا الآن" */
-.cta-btn.cta-secondary {
-    background-color: transparent; 
-    color: var(--white); 
-    border: 2px solid var(--white); 
-}
-
-.cta-btn.cta-secondary:hover {
-    background-color: var(--primary); 
-    color: var(--white);
-    border-color: var(--primary); 
-}
-
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: radial-gradient(ellipse at center, rgba(193, 122, 78, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 60px 40px;
+    max-width: 900px;
+    padding: 80px 40px;
+    animation: slideUpFade 0.8s ease-out;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
-    font-size: clamp(3.5rem, 10vw, 5rem);
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
     font-weight: 900;
-    margin-bottom: 16px;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
-    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), 
+                 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 4px;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #E8E8E8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 4px 4px 16px rgba(193, 122, 78, 0.6), 
+                     2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+        text-shadow: 4px 4px 20px rgba(193, 122, 78, 0.8), 
+                     2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .hero-subtitle {
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
-    margin-bottom: 16px;
-    font-weight: 500;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 24px;
+    font-weight: 600;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4), 
+                 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    color: #FFD700;
+    animation: slideUpFade 0.8s ease-out 0.1s both;
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    line-height: 1.8;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.15rem;
+    margin-bottom: 50px;
+    line-height: 1.9;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 
+                 1px 1px 2px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideUpFade 0.8s ease-out 0.2s both;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: slideUpFade 0.8s ease-out 0.3s both;
 }
 
 .cta-btn {
-    padding: 16px 32px;
-    font-size: 1.05rem;
+    padding: 18px 42px;
+    font-size: 1.1rem;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .cta-primary {
-    background: var(--white);
+    background: linear-gradient(135deg, var(--white) 0%, #F5F5F5 100%);
     color: var(--primary);
 }
 
 .cta-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(193, 122, 78, 0.4);
+}
+
+.cta-primary:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 .cta-secondary {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2.5px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 .cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(255, 255, 255, 0.2);
+}
+
+.cta-secondary:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 /* ==================== Section Headers ==================== */
