@@ -1,6 +1,3 @@
-/* ==================== FAKH-ART Complete CSS ==================== */
-/* Copy this entire file into your styles.css */
-
 * {
     margin: 0;
     padding: 0;
@@ -80,167 +77,96 @@ body {
 
 .nav-link:hover {
     background-color: var(--primary);
-    color: var(--
-               
-               /* ==================== Hero Section (بدون الحاجة لصورة خارجية) ==================== */
+    color: var(--white);
+}
+
+/* ==================== Hero Section ==================== */
 .hero {
     min-height: 90vh;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
-                url('images/hero-bg.jpg.jpg') center/cover no-repeat fixed;
+    background: linear-gradient(135deg, #7D4E2C 0%, #C17A4E 50%, #9D6140 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--white);
     text-align: center;
-}
-
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.3) 0%, 
-        rgba(0, 0, 0, 0.5) 50%, 
-        rgba(0, 0, 0, 0.4) 100%);
-    z-index: 1;
+    overflow: hidden;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(193, 122, 78, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    padding: 80px 40px;
-    animation: slideUpFade 0.8s ease-out;
-}
-
-@keyframes slideUpFade {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    max-width: 800px;
+    padding: 60px 40px;
 }
 
 .hero-title {
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-size: clamp(3.5rem, 10vw, 5rem);
     font-weight: 900;
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), 
-                 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 4px;
-    background: linear-gradient(to bottom, #FFFFFF 0%, #E8E8E8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: glow 3s ease-in-out infinite;
-}
-
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 4px 4px 16px rgba(193, 122, 78, 0.6), 
-                     2px 2px 4px rgba(0, 0, 0, 0.4);
-    }
-    50% {
-        text-shadow: 4px 4px 20px rgba(193, 122, 78, 0.8), 
-                     2px 2px 6px rgba(0, 0, 0, 0.5);
-    }
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    margin-bottom: 24px;
-    font-weight: 600;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4), 
-                 1px 1px 3px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
-    color: #FFD700;
-    animation: slideUpFade 0.8s ease-out 0.1s both;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 16px;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description {
-    font-size: 1.15rem;
-    margin-bottom: 50px;
-    line-height: 1.9;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 
-                 1px 1px 2px rgba(0, 0, 0, 0.3);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: slideUpFade 0.8s ease-out 0.2s both;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: slideUpFade 0.8s ease-out 0.3s both;
 }
 
 .cta-btn {
-    padding: 18px 42px;
-    font-size: 1.1rem;
+    padding: 16px 32px;
+    font-size: 1.05rem;
     font-weight: 700;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     border: none;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s ease;
     text-decoration: none;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
 
 .cta-primary {
-    background: linear-gradient(135deg, var(--white) 0%, #F5F5F5 100%);
+    background: var(--white);
     color: var(--primary);
 }
 
 .cta-primary:hover {
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 16px 40px rgba(193, 122, 78, 0.4);
-}
-
-.cta-primary:active {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta-secondary {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     color: var(--white);
-    border: 2.5px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.8);
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 16px 40px rgba(255, 255, 255, 0.2);
-}
-
-.cta-secondary:active {
-    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
 }
 
 /* ==================== Section Headers ==================== */
