@@ -79,11 +79,66 @@ body {
     background-color: var(--primary);
     color: var(--white);
 }
+/* ======================== Buttons Styles ======================== */
+.btn-primary {
+    /* الخلفية: استخدام اللون الأساسي البني الدافئ */
+    background-color: var(--primary); 
+    /* النص: استخدام اللون الأبيض */
+    color: var(--white); 
+    
+    /* الخصائص الشكلية */
+    display: inline-block; 
+    padding: 15px 30px; 
+    border: 2px solid var(--primary); 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+/* تأثير التمرير (Hover Effect) */
+.btn-primary:hover {
+    /* عند مرور الماوس: نستخدم اللون الأساسي الداكن */
+    background-color: var(--primary-dark); 
+    border-color: var(--primary-dark);
+}
+/* ======================== Buttons Styles ======================== */
+.btn-primary {
+    /* الخلفية: استخدام اللون الأساسي البني الدافئ */
+    background-color: var(--primary); 
+    /* النص: استخدام اللون الأبيض */
+    color: var(--white); 
+    
+    /* الخصائص الشكلية */
+    display: inline-block; 
+    padding: 15px 30px; 
+    border: 2px solid var(--primary); 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+/* تأثير التمرير (Hover Effect) */
+.btn-primary:hover 
+    /* عند مرور الماوس: نستخدم اللون الأساسي الداكن */
+    background-color: var(--primary-dark); 
+    border-color: var(--primary-dark);
+}
 
 /* ==================== Hero Section ==================== */
 .hero {
     min-height: 90vh;
-    background: linear-gradient(135deg, #7D4E2C 0%, #C17A4E 50%, #9D6140 100%);
+    /* 🎨 الكود المعدل هنا: دمج التعتيم الداكن مع الصورة */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* طبقة تعتيم */
+        url('images/fakh-art-bg.jpg'); /* الصورة التي اخترتها */
+        
+    /* خصائص الصورة الإضافية */
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    
     position: relative;
     display: flex;
     align-items: center;
@@ -92,6 +147,7 @@ body {
     text-align: center;
     overflow: hidden;
 }
+
 
 .hero-overlay {
     position: absolute;
