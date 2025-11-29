@@ -85,17 +85,16 @@ body {
                /* ==================== Hero Section (بدون الحاجة لصورة خارجية) ==================== */
 .hero {
     min-height: 90vh;
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 25%, #CD853F 50%, #A0522D 75%, #8B4513 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+                url('./images/hero-bg.jpg') center/cover no-repeat fixed;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: white;
     text-align: center;
-    overflow: hidden;
 }
+
 
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
