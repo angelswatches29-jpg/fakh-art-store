@@ -23,7 +23,15 @@ const products = [
         name: "طقم الفخار الريفي الدافئ",
         description: "طقم فخاري ريفي بألوان دافئة وذهبية، يوحي بالدفء والراحة. يتضمن قدور طبخ بأحجام مختلفة وصحون تقديم عملية وجميلة. يحافظ على درجة حرارة الطعام بشكل طبيعي.",
         image: "set4.jpg.JPG"
-    },
+    items: [
+        { name: "الطاجن بالغطاء", image: "./images/set1-item1.jpg" },
+        { name: "الإبريق الكبير", image: "./images/set1-item2.jpg" },
+        { name: "الإبريق الصغير", image: "./images/set1-item3.jpg" },
+        { name: "الأكواس المكدسة", image: "./images/set1-item4.jpg" },
+        { name: "الأطباق المكدسة", image: "./images/set1-item5.jpg" },
+        { name: "الطبق البيضاوي الكبير", image: "./images/set1-item6.jpg" }
+    ]
+},
     {
         id: 5,
         name: "طقم الأناقة الكلاسيكية",
