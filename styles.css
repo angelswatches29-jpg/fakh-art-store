@@ -86,7 +86,7 @@ body {
 .hero {
     min-height: 90vh;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
-                url('./images/hero-bg.jpg.jpg') center/cover no-repeat fixed;
+                url('images/hero-bg.jpg.jpg') center/cover no-repeat fixed;
     position: relative;
     display: flex;
     align-items: center;
