@@ -1,319 +1,601 @@
-// ==================== البيانات مع صور AI ====================
-const products = [
-    {
-        id: 1,
-        title: "طاجن فخاري تقليدي أصيل",
-        description: "طاجن فخاري تقليدي مصنوع يدوياً من أجود الخامات، مثالي للطبخ البطيء والحصول على نكهة غنية وأصيلة لا تُنسى",
-        image: "images/traditional_moroccan_tajine_pot.png"
-    },
-    {
-        id: 2,
-        title: "قدر طبخ فخاري كبير",
-        description: "قدر فخاري واسع وعملي مثالي للعائلات الكبيرة والمناسبات، يطبخ الطعام بشكل متساوٍ ويعطي نكهة غنية وممتازة",
-        image: "images/large_clay_cooking_pot.png"
-    },
-    {
-        id: 3,
-        title: "طقم صحون تقديم فخارية",
-        description: "صحون فخارية جميلة وأنيقة للتقديم، تضيف لمسة تقليدية راقية لمائدتك في الأعياد والمناسبات الخاصة",
-        image: "images/ceramic_serving_bowls.png"
-    },
-    {
-        id: 4,
-        title: "طاجن مزخرف بنقوش تقليدية",
-        description: "طاجن فخاري فريد بنقوش يدوية جميلة، يجمع بين الفن والجمال والوظيفة لطبخ أشهى الأطباق وتقديمها بأناقة",
-        image: "images/decorated_ceramic_tajine.png"
-    },
-    {
-        id: 5,
-        title: "أكواس فخارية تقليدية",
-        description: "أكواس فخارية عملية وجميلة لشرب المشروبات الساخنة، تحافظ على درجة الحرارة لفترة أطول مع إضافة لمسة تقليدية",
-        image: "images/traditional_clay_cups.png"
-    },
-    {
-        id: 6,
-        title: "طواجن فردية صغيرة",
-        description: "طواجن صغيرة مثالية للحصص الفردية والضيافة، رائعة لتقديم الأطباق بشكل أنيق واحترافي مع الحفاظ على الدفء",
-        image: "images/small_pottery_dishes_set.png"
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #C17A4E;
+    --primary-dark: #9D6140;
+    --primary-light: #D4956A;
+    --background: #FEFAF3;
+    --text-dark: #2C1810;
+    --text-light: #6B5C4E;
+    --border: #E8DDD2;
+    --white: #FFFFFF;
+    --whatsapp: #25D366;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.7;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==================== Navigation ==================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+.nav-brand {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.nav-link:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #7D4E2C 0%, #C17A4E 50%, #9D6140 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 60px 40px;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 16px;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 16px 32px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-primary {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ==================== Section Headers ==================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==================== Catalog Section ==================== */
+.catalog-section {
+    padding: 100px 0;
+    background: var(--background);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 36px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid var(--border);
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 40px rgba(193, 122, 78, 0.15);
+    border-color: var(--primary);
+}
+
+.product-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-content {
+    padding: 28px;
+}
+
+.product-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-align: right;
+}
+
+.product-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(193, 122, 78, 0.3);
+}
+
+/* ==================== Recipes Section ==================== */
+.recipes-section {
+    padding: 100px 0;
+    background: #FBF8F5;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 36px;
+}
+
+.recipe-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-header {
+    background: linear-gradient(135deg, rgba(193, 122, 78, 0.1), rgba(193, 122, 78, 0.05));
+    padding: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.recipe-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+.recipe-category {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: var(--white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.recipe-content {
+    padding: 28px;
+}
+
+.recipe-description {
+    color: var(--text-light);
+    text-align: right;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.recipe-list h4 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-align: right;
+    margin-bottom: 12px;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.recipe-list ul {
+    text-align: right;
+    list-style: none;
+}
+
+.recipe-list li {
+    padding: 8px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.recipe-list li:before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    margin-left: 12px;
+    font-size: 1.2rem;
+}
+
+/* ==================== Contact Section ==================== */
+.contact-section {
+    padding: 100px 0;
+    background: var(--background);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
-];
+}
 
-const testimonials = [
-    {
-        id: 1,
-        name: "فاطمة محمود",
-        rating: 5,
-        comment: "أواني فخارية رائعة جداً! طعم الطعام تحسّن كثيراً خاصة في رمضان. الجودة ممتازة والسعر معقول جداً. أنصح بشدة!"
-    },
-    {
-        id: 2,
-        name: "محمود حسن علي",
-        rating: 5,
-        comment: "استخدمت الطاجن مع عائلتي في الأعياد وكانت التجربة رائعة جداً. الطعام يطهى بشكل متساوٍ والنكهة فريدة وشهية جداً."
-    },
-    {
-        id: 3,
-        name: "ليلى محمود خالد",
-        rating: 5,
-        comment: "أحب الصحون الفخارية جداً، تضيف لمسة جميلة وأنيقة للمائدة. الخدمة كانت ممتازة والتوصيل سريع جداً."
-    },
-    {
-        id: 4,
-        name: "علي سالم أحمد",
-        rating: 5,
-        comment: "أفضل استثمار قمت به لمطبخي! الأطباق تحتفظ بالحرارة بشكل ممتاز وتعطي نكهة فريدة لا تُنسى. جودة عالية جداً!"
-    },
-    {
-        id: 5,
-        name: "نور الدين إبراهيم",
-        rating: 5,
-        comment: "الخدمة كانت رائعة والمنتج جاء بسرعة وفي حالة ممتازة. أنصح أي شخص يريد أواني فخارية أصلية بعالية الجودة."
+.contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: right;
+    background: #FBF8F5;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(193, 122, 78, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(193, 122, 78, 0.3);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    text-align: right;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: var(--text-light);
+    text-align: right;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.whatsapp-link,
+.email-link {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover,
+.email-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ==================== WhatsApp Button ==================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--whatsapp), #20BA5A);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    z-index: 50;
+    transition: all 0.3s ease;
+    animation: pulse 2.5s infinite;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     }
-];
-
-const recipes = [
-    {
-        id: 1,
-        title: "طاجن الكسكس بالدجاج الرمضاني",
-        category: "أطباق رمضان",
-        cookTime: "45 دقيقة",
-        servings: "6 أشخاص",
-        description: "طاجن رمضاني تقليدي مشهور في العائلات العربية، يطهى ببطء في أوانينا الفخارية الأصيلة لنكهة فريدة",
-        ingredients: [
-            "دجاج مقطع (1 كغ)",
-            "كسكس (500 غ)",
-            "بصل (3 حبات)",
-            "جزر (4 حبات)",
-            "حمص مسلوق (كوب)",
-            "زيت زيتون (ربع كوب)",
-            "توابل (كمون، قرفة، كركم)",
-            "ماء دافئ حسب الحاجة"
-        ],
-        instructions: [
-            "ضع زيت الزيتون في الطاجن الفخاري على نار متوسطة حتى يسخن",
-            "أضف البصل والجزر المقطعة وحمرها حتى تتغير لونها قليلاً",
-            "أضف الدجاج المقطع والتوابل واطهه لمدة 30 دقيقة على نار هادئة",
-            "أضف الحمص المسلوق والماء حسب الحاجة",
-            "اترك الطاجن على النار حتى ينضج اللحم تماماً (15-20 دقيقة)",
-            "قدّم الطاجن ساخناً مع الكسكس المفروك"
-        ],
-        tips: [
-            "استخدم طاجن فخاري أصيل للحصول على أفضل النتائج",
-            "الطهي البطيء على نار هادئة يعطي نكهة أعمق وأفضل",
-            "يمكنك إضافة التمر أو الزبيب للتحلية في آخر 5 دقائق"
-        ]
-    },
-    {
-        id: 2,
-        title: "قدر الفاصوليا البيضاء الدافئ",
-        category: "أطباق تقليدية",
-        cookTime: "1 ساعة",
-        servings: "8 أشخاص",
-        description: "طبق دافئ وصحي ومشبع مثالي للعائلات والجمعات، يطهى في القدر الفخاري للحصول على طعم ممتاز",
-        ingredients: [
-            "فاصوليا بيضاء مسلوقة (كيلو)",
-            "لحم مقطع (500 غ)",
-            "بصل (2 حبة)",
-            "ثوم (4 فصوص)",
-            "طماطم (3 حبات) أو معجون طماطم",
-            "زيت زيتون (ربع كوب)",
-            "مرق دجاج أو ماء (2 كوب)",
-            "ملح وفلفل للتذوق"
-        ],
-        instructions: [
-            "قم بتسخين الزيت في القدر الفخاري على نار متوسطة",
-            "أضف اللحم المقطع والبصل والثوم واطهه حتى يتغير لون اللحم",
-            "أضف الطماطم والمرق والملح والفلفل",
-            "أضف الفاصوليا البيضاء المسلوقة",
-            "اترك الخليط على نار هادئة لمدة 45 دقيقة حتى يتجانس الطعم",
-            "قدّم الطبق ساخناً مع الخبز"
-        ],
-        tips: [
-            "القدر الفخاري يحافظ على درجة الحرارة بشكل متساوٍ جداً",
-            "للحصول على نكهة أقوى، اطهي لفترة أطول على نار هادئة جداً",
-            "يمكنك إضافة أعشاب طازة مثل البقدونس والكزبرة"
-        ]
-    },
-    {
-        id: 3,
-        title: "طاجن السمك بالليمون والأعشاب",
-        category: "أطباق مناسبات",
-        cookTime: "30 دقيقة",
-        servings: "4 أشخاص",
-        description: "طبق فاخر وخفيف وصحي مثالي للمناسبات والعطل والحفلات العائلية",
-        ingredients: [
-            "سمك طازة (1 كغ)",
-            "ليمون (2 حبة)",
-            "بصل (1 حبة)",
-            "زيت زيتون (ربع كوب)",
-            "ثوم (3 فصوص)",
-            "أعشاب طازة (بقدونس، كزبرة، نعناع)",
-            "ملح وفلفل",
-            "ماء قليل"
-        ],
-        instructions: [
-            "نظّف السمك جيداً واغسله بماء بارد",
-            "ضع السمك في الطاجن الفخاري",
-            "أضف شرائح الليمون والبصل والثوم على السمك",
-            "انثر الأعشاب الطازة المفرومة على السمك",
-            "صب الزيت وعصير الليمون على السمك",
-            "غطّ الطاجن واطهه على نار هادئة لمدة 20 دقيقة فقط",
-            "قدّم الطاجن ساخناً مع الأرز أو الخضار"
-        ],
-        tips: [
-            "لا تطهي السمك لفترة طويلة حتى لا يجف وتتراجع جودته",
-            "الطاجن الفخاري يحافظ على رطوبة السمك بشكل طبيعي ممتاز",
-            "استخدم السمك الطازة فقط للحصول على أفضل النتائج"
-        ]
-    }
-];
-
-// ==================== تحميل المنتجات ====================
-function loadProducts() {
-    const grid = document.getElementById('productsGrid');
-    grid.innerHTML = products.map(product => `
-        <div class="product-card">
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.title}" onerror="this.src='https://via.placeholder.com/500x500?text=${encodeURIComponent(product.title)}'">
-            </div>
-            <div class="product-content">
-                <h3 class="product-title">${product.title}</h3>
-                <p class="product-description">${product.description}</p>
-                <button class="submit-btn" onclick="contactForPrice('${product.title}')">اطلب معلومات السعر</button>
-            </div>
-        </div>
-    `).join('');
-}
-
-// ==================== تحميل التقييمات ====================
-function loadTestimonials() {
-    const list = document.getElementById('testimonialsList');
-    list.innerHTML = testimonials.map(testimonial => `
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-name">${testimonial.name}</div>
-                <div class="stars">${'⭐'.repeat(testimonial.rating)}</div>
-            </div>
-            <p class="testimonial-text">"${testimonial.comment}"</p>
-        </div>
-    `).join('');
-}
-
-// ==================== تحميل الوصفات ====================
-function loadRecipes() {
-    const list = document.getElementById('recipesList');
-    list.innerHTML = recipes.map(recipe => `
-        <div class="recipe-card">
-            <div class="recipe-header">
-                <span class="recipe-category">${recipe.category}</span>
-                <h3 class="recipe-title">${recipe.title}</h3>
-                <div class="recipe-meta">
-                    <span>⏱️ ${recipe.cookTime}</span>
-                    <span>👥 ${recipe.servings}</span>
-                </div>
-            </div>
-            <div class="recipe-content">
-                <p class="recipe-description">${recipe.description}</p>
-                
-                <div class="recipe-list">
-                    <h4>المكونات</h4>
-                    <ul>
-                        ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="recipe-list">
-                    <h4>طريقة التحضير</h4>
-                    <ol style="text-align: right; list-style: decimal inside;">
-                        ${recipe.instructions.map((inst, i) => `<li style="padding: 6px 0; border-bottom: 1px solid #E8DDD2;">${inst}</li>`).join('')}
-                    </ol>
-                </div>
-
-                <div class="recipe-list">
-                    <h4>نصائح مهمة</h4>
-                    <ul>
-                        ${recipe.tips.map(tip => `<li>${tip}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    `).join('');
-}
-
-// ==================== فتح واتساب ====================
-function openWhatsApp() {
-    const message = encodeURIComponent("مرحباً، أريد الاستفسار عن الأواني الفخارية ورؤية المزيد من الموديلات والأسعار المتاحة");
-    window.open(`https://wa.me/213541420166?text=${message}`, '_blank');
-}
-
-// ==================== الاستفسار عن سعر المنتج ====================
-function contactForPrice(productName) {
-    const message = encodeURIComponent(`مرحباً، أنا مهتم بمنتج: ${productName}\nهل يمكنك إخبري بالسعر والمواصفات التفصيلية والتفاصيل أكثر؟`);
-    window.open(`https://wa.me/213541420166?text=${message}`, '_blank');
-}
-
-// ==================== معالجة نموذج الاتصال ====================
-function handleContactSubmit(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    if (!name || !email || !phone || !message) {
-        alert('يرجى ملء جميع الحقول');
-        return;
-    }
-    
-    // إنشاء رسالة واتساب احترافية
-    const whatsappMessage = encodeURIComponent(
-        `📋 رسالة جديدة من موقع FAKH-ART\n\n` +
-        `👤 الاسم: ${name}\n` +
-        `📧 البريد الإلكتروني: ${email}\n` +
-        `📱 الهاتف: ${phone}\n\n` +
-        `💬 الرسالة:\n${message}`
-    );
-    
-    // فتح واتساب
-    window.open(`https://wa.me/213541420166?text=${whatsappMessage}`, '_blank');
-    
-    // إعادة تعيين النموذج
-    document.getElementById('contactForm').reset();
-    
-    // عرض رسالة نجاح
-    setTimeout(() => {
-        alert('✅ تم إرسال رسالتك بنجاح!\n\nسنتواصل معك قريباً عبر الهاتف أو البريد الإلكتروني');
-    }, 500);
-}
-
-// ==================== التمرير إلى القسم ====================
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+    50% {
+        box-shadow: 0 4px 40px rgba(37, 211, 102, 0.6);
     }
 }
 
-// ==================== تحميل البيانات عند فتح الصفحة ====================
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ جاري تحميل موقع FAKH-ART...');
-    loadProducts();
-    loadTestimonials();
-    loadRecipes();
-    console.log('✅ تم تحميل جميع البيانات بنجاح!');
-});
+/* ==================== Footer ==================== */
+.footer {
+    background: linear-gradient(135deg, var(--text-dark), var(--primary));
+    color: var(--white);
+    padding: 48px 0 24px;
+    text-align: center;
+    border-top: 3px solid var(--primary);
+}
 
-// ==================== التمرير السلس للـ Links ====================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+.footer p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 4px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+
+    .products-grid,
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form,
+    .info-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand {
+        font-size: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+    }
+
+    .whatsapp-btn {
+        width: 60px;
+        height: 60px;
+        bottom: 16px;
+        left: 16px;
+    }
+}
