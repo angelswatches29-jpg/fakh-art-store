@@ -89,7 +89,7 @@ const products = [
         id: 15,
         name: "طاجين ذو المقبض",
         description: "طاجن فخاري مع مقبض تصميمي يسهل التعامل معه، مناسب للطهي على النار والفرن بأمان.",
-        image: "tajine-handle.jpg.JPG"
+        image: "tajine-handle.jpg.jpg"
     },
     {
         id: 16,
