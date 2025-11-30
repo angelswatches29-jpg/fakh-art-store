@@ -229,3 +229,89 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+const individualProducts = [
+    {
+        id: 1,
+        name: "قدر فخاري",
+        image: "./images/individual-products/qadr-fakhari.jpg", 
+        description: "قدر فخاري عالي الجودة مناسب للطهي على النار والفرن، يحافظ على حرارة الطعام بشكل متساوٍ ويعطيه نكهة طبيعية عميقة."
+    },
+    {
+        id: 2,
+        name: "طاجين فخاري",
+        image: "./images/individual-products/tajine-fakhari.jpg", 
+        description: "طاجين فخاري تقليدي مصنوع من طين طبيعي عالي الجودة، يستخدم للطهي على النار مع حفظ الرطوبة والنكهات."
+    },
+    {
+        id: 3,
+        name: "طبق فخاري مقعر",
+        image: "./images/individual-products/dish-maqar.jpg",
+        description: "طبق فخاري مقعر مناسب لتقديم الطعام أو الطهي في الفرن، يتحمل درجات حرارة عالية ويحافظ على طعم الطعام الأصيل."
+    },
+    {
+        id: 4,
+        name: "صحن فخاري",
+        image: "./images/individual-products/sahne-fakhari.jpg",
+        description: "صحن فخاري تقليدي مناسب للتقديم والطهي، مصنوع من خامات طبيعية صديقة للبيئة ويمكن استخدامه على النار والفرن."
+    },
+    {
+        id: 5,
+        name: "طاجين ذو المقبض",
+        image: "./images/individual-products/tajine-handle.jpg",
+        description: "طاجين فخاري مع مقبض تصميمي يسهل التعامل معه، مناسب للطهي على النار والفرن بأمان."
+    },
+    {
+        id: 6,
+        name: "طاجين القبعة",
+        image: "./images/individual-products/tajine-qobaa.jpg",
+        description: "طاجين فخاري برأس مدبب تقليدي الشكل، يستخدم للطهي على النار ويحافظ على البخار داخل الطاجن."
+    },
+    {
+        id: 7,
+        name: "قدر فخاري حجم صغير",
+        image: "./images/individual-products/qadr-sghir.jpg",
+        description: "قدر فخاري صغير الحجم مناسب للعائلات الصغيرة أو تحضير الأطباق الجانبية."
+    },
+    {
+        id: 8,
+        name: "قدر فخاري عادي",
+        image: "./images/individual-products/qadr-aadi.jpg",
+        description: "قدر فخاري بحجم متوسط متعدد الاستخدامات، مناسب للطهي على النار والفرن."
+    },
+    {
+        id: 9,
+        name: "قدر فخاري مزخرف",
+        image: "./images/individual-products/qadr-muzakhraf.jpg",
+        description: "قدر فخاري مزخرف برسومات تقليدية جميلة، يجمع بين الفخامة والعملية ويضيف لمسة جمالية لمائدتك."
+    },
+    {
+        id: 10,
+        name: "وعاء زيت الزيتون الفخاري",
+        image: "./images/individual-products/olive-oil-pot.jpg",
+        description: "وعاء فخاري خاص بحفظ زيت الزيتون والزيوت النباتية، مصنوع من طين عالي الجودة يحافظ على الزيت من التأكسد."
+    },
+    {
+        id: 11,
+        name: "الكوب الفخاري",
+        image: "./images/individual-products/clay-cup.jpg",
+        description: "كوب فخاري تقليدي مناسب لشرب القهوة والشاي، يحتفظ بحرارة المشروب أطول فترة ممكنة."
+    }
+];
+
+function loadIndividualProducts() {
+    const grid = document.getElementById('individualProductsGrid');
+    if (!grid) return; 
+
+    grid.innerHTML = individualProducts.map(product => `
+        <div class="product-card">
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-description">${product.description}</p>
+                <button class="order-btn" onclick="orderProduct('${product.name}')">اطلب الآن</button>
+            </div>
+        </div>
+    `).join('');
+}
