@@ -30,73 +30,73 @@ const products = [
         name: "طقم الأناقة الكلاسيكية",
         description: "طقم أنيق بتصميم كلاسيكي بسيط مع نقوش رمادية دقيقة. يشمل طاجن بغطاء وصحون تقديم وأكواس شاي وأطباق. خيار مثالي للمنازل الأنيقة والذوق الرفيع.",
         image: "set5.jpg .JPG"
-    }
+    },
     {
         id: 6,
         name: "قدر فخاري",
         description: "قدر فخاري عالي الجودة مناسب للطهي على النار والفرن، يحافظ على حرارة الطعام بشكل متساوٍ ويعطيه نكهة طبيعية عميقة.",
-        image: "qadr-fakhari.jpg"
+        image: "qadr-fakhari.jpg.JPG"
     },
     {
         id: 7,
         name: "طبق فخاري مقعر",
         description: "طبق فخاري مقعر مناسب لتقديم الطعام أو الطهي في الفرن، يتحمل درجات حرارة عالية ويحافظ على طعم الطعام الأصيل.",
-        image: "dish-maqar.jpg"
+        image: "dish-maqar.jpg.JPG"
     },
     {
         id: 8,
         name: "صحن فخاري",
         description: "صحن فخاري تقليدي مناسب للتقديم والطهي، مصنوع من خامات طبيعية صديقة للبيئة ويمكن استخدامه على النار والفرن.",
-        image: "sahne-fakhari.jpg"
+        image: "sahne-fakhari.jpg.JPG"
     },
     {
         id: 9,
         name: "قدر فخاري حجم صغير",
         description: "قدر فخاري صغير الحجم مناسب للعائلات الصغيرة أو تحضير الأطباق الجانبية.",
-        image: "qadr-sghir.jpg"
+        image: "qadr-sghir.jpg.JPG"
     },
     {
         id: 10,
         name: "قدر فخاري عادي",
         description: "قدر فخاري بحجم متوسط متعدد الاستخدامات، مناسب للطهي على النار والفرن.",
-        image: "qadr-aadi.jpg"
+        image: "qadr-aadi.jpg.JPG"
     },
     {
         id: 11,
         name: "قدر فخاري مزخرف",
         description: "قدر فخاري مزخرف برسومات تقليدية جميلة، يجمع بين الفخامة والعملية ويضيف لمسة جمالية لمائدتك.",
-        image: "qadr-muzakhraf.jpg"
+        image: "qadr-muzakhraf.jpg.JPG"
     },
     {
         id: 12,
         name: "وعاء زيت الزيتون الفخاري",
         description: "وعاء فخاري خاص بحفظ زيت الزيتون والزيوت النباتية، مصنوع من طين عالي الجودة يحافظ على الزيت من التأكسد.",
-        image: "olive-oil-pot.jpg"
+        image: "olive-oil-pot.jpg.JPG"
     },
     {
         id: 13,
         name: "الكوب الفخاري",
         description: "كوب فخاري تقليدي مناسب لشرب القهوة والشاي، يحتفظ بحرارة المشروب أطول فترة ممكنة.",
-        image: "clay-cup.jpg"
+        image: "clay-cup.jpg.JPG"
     },
     {
         id: 14,
         name: "طاجين فخاري",
         description: "طاجن فخاري تقليدي مصنوع من طين طبيعي عالي الجودة، يستخدم للطهي على النار مع حفظ الرطوبة والنكهات.",
-        image: "tajine-fakhari.jpg"
+        image: "tajine-fakhari.jpg.JPG"
     },
     {
         id: 15,
         name: "طاجين ذو المقبض",
         description: "طاجن فخاري مع مقبض تصميمي يسهل التعامل معه، مناسب للطهي على النار والفرن بأمان.",
-        image: "tajine-handle.jpg"
+        image: "tajine-handle.jpg.JPG"
     },
     {
         id: 16,
         name: "طاجين القبعة",
         description: "طاجن فخاري برأس مدبب تقليدي الشكل، يستخدم للطهي على النار ويحافظ على البخار داخل الطاجن.",
-        image: "tajine-qobaa.jpg"
-    }
+        image: "tajine-qobaa.jpg.JPG"
+    },
 ];
 
 // ==================== Recipes Data ====================
