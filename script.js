@@ -47,7 +47,7 @@ const products = [
         id: 8,
         name: "صحن فخاري",
         description: "صحن فخاري تقليدي مناسب للتقديم والطهي، مصنوع من خامات طبيعية صديقة للبيئة ويمكن استخدامه على النار والفرن.",
-        image: "sahne-fakhari.jpg.JPG"
+        image: "sahne-fakhari.jpg.jpg"
     },
     {
         id: 9,
@@ -59,13 +59,13 @@ const products = [
         id: 10,
         name: "صحن الفخار تقليدي",
         description: "قدر فخاري بحجم متوسط متعدد الاستخدامات، مناسب للطهي على النار والفرن",
-        image: "qadr-aadi.jpg"
+        image: "qadr-aadi.jpg.JPG"
     },
     {
         id: 11,
         name: "قدر فخاري مزخرف",
         description: "قدر فخاري مزخرف برسومات تقليدية جميلة، يجمع بين الفخامة والعملية ويضيف لمسة جمالية لمائدتك.",
-        image: "qadr-muzakhraf.jpg.JPG"
+        image: "qadr-muzakhraf.jpg.jpg"
     },
     {
         id: 12,
@@ -77,7 +77,7 @@ const products = [
         id: 13,
         name: "الكوب الفخاري",
         description: "كوب فخاري تقليدي مناسب لشرب القهوة والشاي، يحتفظ بحرارة المشروب أطول فترة ممكنة.",
-        image: "clay-cup.jpg.JPG"
+        image: "clay-cup.jpg.jpg"
     },
     {
         id: 14,
