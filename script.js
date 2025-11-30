@@ -233,67 +233,78 @@ const individualProducts = [
     {
         id: 1,
         name: "قدر فخاري",
-        image: "qadr-fakhari.jpg.JPG", 
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/qadr-fakhari.jpg.JPG", 
         description: "قدر فخاري عالي الجودة مناسب للطهي على النار والفرن، يحافظ على حرارة الطعام بشكل متساوٍ ويعطيه نكهة طبيعية عميقة."
     },
     {
         id: 2,
         name: "طاجين فخاري",
-        image: "tajine-fakhari.jpg.JPG", 
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/tajine-fakhari.jpg.JPG", 
         description: "طاجين فخاري تقليدي مصنوع من طين طبيعي عالي الجودة، يستخدم للطهي على النار مع حفظ الرطوبة والنكهات."
     },
     {
         id: 3,
         name: "طبق فخاري مقعر",
-        image: "dish-maqar.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/dish-maqar.jpg.JPG",
         description: "طبق فخاري مقعر مناسب لتقديم الطعام أو الطهي في الفرن، يتحمل درجات حرارة عالية ويحافظ على طعم الطعام الأصيل."
     },
     {
         id: 4,
         name: "صحن فخاري",
-        image: "sahne-fakhari.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/sahne-fakhari.jpg.JPG",
         description: "صحن فخاري تقليدي مناسب للتقديم والطهي، مصنوع من خامات طبيعية صديقة للبيئة ويمكن استخدامه على النار والفرن."
     },
     {
         id: 5,
         name: "طاجين ذو المقبض",
-        image: "tajine-handle.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/tajine-handle.jpg.JPG",
         description: "طاجين فخاري مع مقبض تصميمي يسهل التعامل معه، مناسب للطهي على النار والفرن بأمان."
     },
     {
         id: 6,
         name: "طاجين القبعة",
-        image: "tajine-qobaa.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/tajine-qobaa.jpg.JPG",
         description: "طاجين فخاري برأس مدبب تقليدي الشكل، يستخدم للطهي على النار ويحافظ على البخار داخل الطاجن."
     },
     {
         id: 7,
         name: "قدر فخاري حجم صغير",
-        image: "qadr-sghir.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/qadr-sghir.jpg.JPG",
         description: "قدر فخاري صغير الحجم مناسب للعائلات الصغيرة أو تحضير الأطباق الجانبية."
     },
     {
         id: 8,
         name: "قدر فخاري عادي",
-        image: "qadr-aadi.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/qadr-aadi.jpg.JPG",
         description: "قدر فخاري بحجم متوسط متعدد الاستخدامات، مناسب للطهي على النار والفرن."
     },
     {
         id: 9,
         name: "قدر فخاري مزخرف",
-        image: "qadr-muzakhraf.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/qadr-muzakhraf.jpg.JPG"
         description: "قدر فخاري مزخرف برسومات تقليدية جميلة، يجمع بين الفخامة والعملية ويضيف لمسة جمالية لمائدتك."
     },
     {
         id: 10,
         name: "وعاء زيت الزيتون الفخاري",
-        image: "olive-oil-pot.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/olive-oil-pot.jpg.JPG",
         description: "وعاء فخاري خاص بحفظ زيت الزيتون والزيوت النباتية، مصنوع من طين عالي الجودة يحافظ على الزيت من التأكسد."
     },
     {
         id: 11,
         name: "الكوب الفخاري",
-        image: "clay-cup.jpg.JPG",
+        image: "// ✅ المسار الجديد (مع الامتداد .JPG والحذف المزدوج)
+image: "/images/individual-products/clay-cup.jpg.JPG",
         description: "كوب فخاري تقليدي مناسب لشرب القهوة والشاي، يحتفظ بحرارة المشروب أطول فترة ممكنة."
     }
 ];
